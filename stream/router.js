@@ -1,8 +1,10 @@
 const {Router} = require('express')
 const Chatroom = require('./model')
+const Sse = require('json-sse')
 
 
 const router = new Router()
+const stream = new Sse()
 
 router.get('/stream', (req, res) =>{
     console.log('got a request on /stream')
